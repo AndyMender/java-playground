@@ -34,7 +34,7 @@ public class Accounting {
         // 1. Check for validity and allow overdrawing
         if ((this.accountBalance - amountToWithdraw) < 0) {
             System.err.println(String.format(
-                "You are trying to withdraw %f and you only have %.2f. Your account is now in debit!",
+                "You are trying to withdraw %.2f and you only have %.2f. Your account is now in debit!",
                 amountToWithdraw, this.accountBalance
             ));
         }       
