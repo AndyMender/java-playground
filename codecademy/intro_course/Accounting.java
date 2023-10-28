@@ -37,7 +37,7 @@ public class Accounting {
                 "You are trying to withdraw %.2f and you only have %.2f. Your account is now in debit!",
                 amountToWithdraw, this.accountBalance
             ));
-        }       
+        }
 
         // 2. Adjust balance
         // NOTE: One could also adjust by the possible amount to withdraw and still return something
