@@ -2,7 +2,6 @@ package codecademy.intro_course;
 
 import java.util.Collections;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Dog implements Comparable<Dog> {
     String breed;
