@@ -1,19 +1,24 @@
 version: '4'
-name: pgsql
+name: sql_testing
 
 services:
   pgsql:
     image: postgres:16.2
+    restart: always
     ports:
-    - 5432:5432
+      - 5432:5432
     volumes:
       - /var/db/postgres/data:/var/lib/postgres/data
+    env_file:
+      - path: ./.db_credentials        # contains pgsql credentials
+        required: true
+  mysql:
+    image: mysql:8.3
     restart: always
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD_FILE=/run/secrets/db_credentials
-    secrets:
-      - db_credentials
-secrets:
-  db_credentials:
-    file: ./pgsql_credentials
+    ports:
+      - 3306:3306
+    volumes:
+      - /var/db/mysql/data:/var/lib/mysql
+    env_file:
+      - path: ./.db_credentials        # contains MYSQL_ROOT_PASSWORD
+        required: true
