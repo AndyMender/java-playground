@@ -27,7 +27,6 @@ public class GenericConnector {
 
         ArrayList<String> columns = new ArrayList<>(10);
         columns.add("id");
-        columns.add("code");
         columns.add("date_prod");
         columns.add("title");
         columns.add("genre");
@@ -42,6 +41,7 @@ public class GenericConnector {
             POSTGRES_PORT,
             POSTGRES_DBNAME
         );
+        System.out.println("Connecting to database via URL: " + dbUrl);
 
         try {
             Connection conn = DriverManager.getConnection(dbUrl, connProperties);
@@ -50,11 +50,13 @@ public class GenericConnector {
                 try (ResultSet rs = st.executeQuery(query)) {
                     // NOTE: The core implementation of JDBC does not support returning complete rows
                     //       Nor does it have any inspection properties to know column names
+                    int recordId = 1;
                     while (rs.next()) {
-                            System.out.println("Returned record: ");
+                        System.out.println(String.format("Returned record %d: ", recordId));
                         for (String col : columns) {
                             System.out.println(String.format("'%s' : '%s'", col, rs.getString(col)));
                         }
+                        ++recordId;
                     }
                 }
             }
