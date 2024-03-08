@@ -43,8 +43,7 @@ public class GenericConnector {
         );
         System.out.println("Connecting to database via URL: " + dbUrl);
 
-        try {
-            Connection conn = DriverManager.getConnection(dbUrl, connProperties);
+        try (Connection conn = DriverManager.getConnection(dbUrl, connProperties)) {
             String query = "SELECT * FROM films";
             try (Statement st = conn.createStatement()) {
                 try (ResultSet rs = st.executeQuery(query)) {
