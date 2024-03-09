@@ -42,24 +42,7 @@ application {
     mainClass = "org.playground_sql.App"
 }
 
-tasks.register("LoadCustomEnvironment") {
-    // Load SQL database credentials from a properties file for all tasks
-    val propFile = file("${rootProject.rootDir.absolutePath}/local.properties")
-    propFile.readLines().forEach { line ->
-        val (key, value) = line.split("=")
-        System.setProperty(key, value)
-    }
-    doLast {
-        println("Loaded custom environment!")
-    }
-}
-
-tasks.withType<JavaCompile>().configureEach {
-    dependsOn("LoadCustomEnvironment")
-}
-
 tasks.named<Test>("test") {
-    dependsOn("LoadCustomEnvironment")
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
