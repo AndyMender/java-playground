@@ -1,4 +1,4 @@
-package playgrounds.sql;
+package org.playground_sql;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,13 +9,17 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.Properties;
 
-public class GenericConnector {
+public class App {
+    public String getGreeting() {
+        return "Hello from SQL Playground!";
+    }   
+
     public static void main(String args[]) {
         System.out.println("Let's start testing...!");
 
         Map<String, String> env = System.getenv(); 
 
-        final String POSTGRES_DBNAME = "java_test";
+        final String POSTGRES_DBNAME = env.get("POSTGRES_DATABASE");
         final String POSTGRES_USER = env.get("POSTGRES_USER");
         final String POSTGRES_PASSWORD = env.get("POSTGRES_PASSWORD");
         final int POSTGRES_PORT = 5432;
