@@ -11,6 +11,7 @@ public class Person implements Serializable {
     // If the value is not specified, the default might not work across JVM versions.
     private static final long serialVersionUID = 1L;
 
+    // NOTE: If the constructor only initializes fields, the default constructor can take care of that
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
