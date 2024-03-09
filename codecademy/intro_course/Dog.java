@@ -19,14 +19,16 @@ public class Dog implements Comparable<Dog> {
 
     // Make the class printable
     public String toString() {
-        return "Woof woof! I am a dog of breed " + this.breed + " and I am " + this.age + " years old!" 
-        + " My name is " + this.name + ". Woof woof!";
+        // NOTE: One could use a proper JSON implementation like 'jackson' or 'gson'
+        return String.format("{'breed': '%s', 'age': '%s', 'name': '%s'}", this.breed, this.age, this.name);
     }
 
+    // NOTE: When leveraging the built-in comparator, only 1 implementation can be selected.
+    // However, 'Collections.sort()' works with a custom comparator as well
     @Override public int compareTo(Dog b) {
-        if (this.age == b.age) return 0;
-        else if (this.age > b.age) return 1;
-        else return -1;
+        return (this.age == b.age) ? 0
+            : (this.age > b.age) ? 1
+            : -1;
     }
 
     public static void main(String[] args) {
@@ -35,6 +37,7 @@ public class Dog implements Comparable<Dog> {
         var barney = new Dog("Barney", "retriever", 2, false);
         var stevie = new Dog("Stevie", "chihua hua", 1.5, true);
 
+        System.out.println("Here are my dogs...");
         System.out.println(barney);
         System.out.println(stevie);
  
@@ -42,9 +45,14 @@ public class Dog implements Comparable<Dog> {
         dogs.add(stevie);
         dogs.add(new Dog("Barney", "retriever", 1.25, false));
 
-        // Super verbose due to the toString() override in Dog class...
-        System.out.println(dogs);
+        System.out.println("New dogs were added. All are here...");
+        dogs.forEach(dog -> {
+            System.out.println(dog);
+        });
         Collections.sort(dogs);
-        System.out.println(dogs);
+        System.out.println("I arranged the dogs by age...");
+        dogs.forEach(dog -> {
+            System.out.println(dog);
+        });
    }  
 }
