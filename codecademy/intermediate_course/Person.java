@@ -24,4 +24,28 @@ public class Person implements Serializable {
     public int getAge() {
         return this.age;
     }
+
+    public String toString() {
+        return String.format("{ 'name': '%s', 'age': '%s' }", this.name, this.age);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        // null case won't have any attributes - handle separately
+        if (obj == null) {
+            return false;
+        }
+
+        // A different class might have different attributes - handle separately
+        if (obj.getClass() != this.getClass()) {
+            return false;
+        } 
+
+        final Person other = (Person) obj;
+        // NOTE: Strings use the 'equals()' operator for comparison!
+        return (
+            (this.getAge() == other.getAge()) &&
+            (this.getName().equals(other.getName()))
+        );
+    }
 }

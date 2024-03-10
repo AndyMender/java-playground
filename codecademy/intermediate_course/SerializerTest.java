@@ -27,9 +27,10 @@ public class SerializerTest {
             var inputStream = new ObjectInputStream(inputFile)
         ) {
             // NOTE: Reading is done in reverse order to serialization
-            var person2 = (Person) inputStream.readObject();
-            assert person2.getAge() == thomas.getAge();
-            assert person2.getName() == thomas.getName();
+            Person person1 = (Person) inputStream.readObject();
+            Person person2 = (Person) inputStream.readObject();
+            System.out.println("Is person 1 the same as Benjamin? " + person1.equals(benjamin));
+            System.out.println("Is person 2 the same as Thomas? " + person2.equals(thomas));
         }
     }
 }
