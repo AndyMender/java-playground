@@ -1,5 +1,7 @@
 package codecademy.intermediate_course;
 
+// NOTE: 'T' can be any REFERENCE type - primitive types need to be boxed
+//       For instance, 'int' to 'Integer', 'char' to 'Character', etc.
 public class Container<T> {
     private T data;
 
