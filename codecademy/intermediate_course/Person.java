@@ -4,8 +4,10 @@ import java.io.Serializable;
 
 // 'Serializable' does not contain any methods so no need for overrides,
 // however, the definition of the serialized class needs to be imported for the JVM to know its composition.
+//
+// serialization can be customized by overriding 'readObject' and 'writeObject' from the 'Serializable' interface
 public class Person implements Serializable {
-    private String name;   
+    private String name;        // String is a reference type, but it implements 'Serializable' so 'Person' can be serialized
     private int age;
     // Used by the JVM to check for compatibility and properly deserialize the object.
     // If the value is not specified, the default might not work across JVM versions.
