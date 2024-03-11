@@ -5,7 +5,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
@@ -29,13 +30,7 @@ public class App {
         connProperties.put("password", POSTGRES_PASSWORD);
         connProperties.put("ssl", false);
 
-        ArrayList<String> columns = new ArrayList<>(10);
-        columns.add("id");
-        columns.add("date_prod");
-        columns.add("title");
-        columns.add("genre");
-        columns.add("duration");
-        columns.add("director");
+        List<String> columns = Arrays.asList("id", "date_prod", "title", "genre", "duration", "director");
 
         // NOTE: The path to the JAR with the PostgreSQL driver needs to be explitly added to CLASSPATH
         //       export CLASSPATH="/usr/share/java/postgresql-42.7.2.jar:."
