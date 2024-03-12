@@ -23,6 +23,8 @@ public class ConcurrencyDemo {
     }
 
     public static void main(String[] args) {
+        // NOTE: Context handling was added to 'ExecutorService' in Java 19
+        // NOTE: The non-pool executor uses structured concurrency
         try (ExecutorService execService = Executors.newVirtualThreadPerTaskExecutor()) {
             // We can assume the fetch functions have the relevant information of a user 
             Future<String> userName = execService.submit(() -> fetchUserName());
