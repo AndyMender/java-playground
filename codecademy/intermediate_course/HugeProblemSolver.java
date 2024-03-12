@@ -39,7 +39,7 @@ public class HugeProblemSolver extends Thread {
         }
     }
 
-    // Will be kicked off by 'Thread.run()'
+    // Will be kicked off by 'Thread.start()'
     @Override
     public void run() {
         solveComputation();
