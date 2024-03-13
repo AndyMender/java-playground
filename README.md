@@ -54,3 +54,10 @@ gradle run
 
 popd
 ```
+
+### Baeldung
+* Sample implementations based on suggestions from [Baeldung](https://www.baeldung.com)
+
+* Location: `baeldung` 
+
+* building and running works the same as for the `intro_course` code samples
