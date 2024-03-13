@@ -1,6 +1,7 @@
 package codecademy.intermediate_course;
 
 import org.junit.Test;
+// NOTE: 'static' imports allow pulling static methods from classes
 import static org.junit.Assert.*;
 
 public class TestFactorial {
