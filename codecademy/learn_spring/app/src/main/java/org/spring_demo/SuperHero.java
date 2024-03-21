@@ -8,6 +8,19 @@ public class SuperHero {
     public SuperHero(String firstName, String lastName, String superpower) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.superPower = superpower;
-    } 
+        this.superpower = superpower;
+    }
+    
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getSuperpower() {
+        return superpower;
+    }
+
 }

@@ -12,4 +12,16 @@ public class SuperReport {
         this.streetAddress = streetAddress;
         this.heroName = heroName;
     }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public String getStreetAddress() {
+        return streetAddress;
+    }
+
+    public String getHeroName() {
+        return heroName;
+    }
 }
