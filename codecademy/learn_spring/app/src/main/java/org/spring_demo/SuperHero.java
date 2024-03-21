@@ -22,5 +22,4 @@ public class SuperHero {
     public String getSuperpower() {
         return superpower;
     }
-
 }

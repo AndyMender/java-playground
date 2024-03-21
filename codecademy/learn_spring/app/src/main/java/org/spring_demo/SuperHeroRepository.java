@@ -9,4 +9,9 @@ public class SuperHeroRepository {
     public void save(SuperHero superhero) {
         repository.add(superhero);
     }
+
+    // TODO: Should return a copy instead of a reference?
+    public List<SuperHero> findAll() {
+        return repository;
+    }
 }
