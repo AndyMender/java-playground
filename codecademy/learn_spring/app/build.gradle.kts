@@ -24,6 +24,8 @@ dependencies {
 
     // https://mvnrepository.com/artifact/org.springframework/spring-core
     implementation("org.springframework:spring-core:6.1.5")
+    // https://mvnrepository.com/artifact/org.springframework/spring-web
+    implementation("org.springframework:spring-web:6.1.5")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
