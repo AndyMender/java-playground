@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/superHeroes")
 public class SuperHeroController {
-  // TODO: The classes need to be implemented separately
   private final SuperHeroRepository superHeroRepository;
   private final SuperReportRepository superReportRepository;
 
@@ -29,32 +28,35 @@ public class SuperHeroController {
   // NOTE: In addition to 'GetMapping' and 'PostMapping', there are wrappers for other HTTP methods
   @GetMapping()
   public Iterable<SuperHero> getSuperHeros() {
-    // TODO: 'SuperHero' class needs an implementation
     Iterable<SuperHero> superHeroes = superHeroRepository.findAll();
     return superHeroes;
   }
 
-  // 'RequestParam' is used to consume URL query parameters
+  // 'RequestBody' is used to convert the HTTP POST payload JSON into a Java object
   @PostMapping("/addNew")
   public String createNewSuperHero(@RequestBody SuperHero superHero) {
     superHeroRepository.save(superHero);
-    return "New Super Hero successfully added!";
+    return String.format(
+      "Superhero %s %s successfully added!",
+      superHero.getFirstName(),
+      superHero.getLastName()
+    );
   }
 
+  // 'RequestParam' is used to consume URL query parameters
   @PostMapping("/help")
   public String postHelp(@RequestParam String postalCode, @RequestParam String streetAddress) {
-    // TODO: 'SuperReport' class needs an implementation
     SuperReport newSuperReport = new SuperReport(postalCode, streetAddress, "");
     superReportRepository.save(newSuperReport);
     return String.format(
-      "Thanks! Super Heroes have been dispatched to %s, %s!",
+      "Thanks! Superheroes have been dispatched to %s, %s!",
       streetAddress,
       postalCode
     );
   }
 
   @GetMapping("/heroReport")
-  public Iterable<SuperReport> getHeroReport() {
+  public Iterable<SuperReport> getHeroReports() {
     Iterable<SuperReport> superReport = superReportRepository.findAll();
     return superReport;
   }
