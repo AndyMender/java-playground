@@ -26,6 +26,10 @@ dependencies {
     implementation("org.springframework:spring-core:6.1.5")
     // https://mvnrepository.com/artifact/org.springframework/spring-web
     implementation("org.springframework:spring-web:6.1.5")
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
+    // NOTE: Includes the 'Hibernate' ORM for the Spring Data JPA (JPA - Java Persistence API)
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.2.4")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
