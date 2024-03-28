@@ -23,10 +23,23 @@ java dir.subdir.class
 ### Intermediate Course
 * Example code from the Codecademy Java intermediate course
 
-* Location: `codecademy/intermediate_course` - Example code from the Codecademy Java intermediate course
+* Location: `codecademy/intermediate_course`
 
 * building and running works the same as for the `intro_course` code samples
 
+### Spring Intro Course
+* Example code from the Codecademy Learn Spring: Fundamentals and Controllers course
+
+* Location: `codecademy/learn_spring`
+
+* building and running works the same as for the `playgrounds/sql` code samples
+
+### Spring App Course
+* Example code from the Codecademy Learn Spring: Building an App course
+
+* Location: `codecademy/build_spring_app`
+
+* building and running works the same as for the `playgrounds/sql` code samples
 
 ### SQL Code Samples
 * Sample code for interacting with SQL database servers
