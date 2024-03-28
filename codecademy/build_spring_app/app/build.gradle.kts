@@ -16,16 +16,18 @@ repositories {
 }
 
 dependencies {
-    // Use JUnit test framework.
-    testImplementation("junit:junit:4.13.2")
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
+    testImplementation("org.springframework.boot:spring-boot-starter-test:3.2.4")
 
     // This dependency is used by the application.
+    // TODO: Do we still need this dependency?
     implementation("com.google.guava:guava:32.1.1-jre")
 
-    // https://mvnrepository.com/artifact/org.springframework/spring-core
-    implementation("org.springframework:spring-core:6.1.5")
-    // https://mvnrepository.com/artifact/org.springframework/spring-web
-    implementation("org.springframework:spring-web:6.1.5")
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter
+    implementation("org.springframework.boot:spring-boot-starter:3.2.4")
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+    implementation("org.springframework.boot:spring-boot-starter-web:3.2.4")
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
     // NOTE: Includes the 'Hibernate' ORM for the Spring Data JPA (JPA - Java Persistence API)
