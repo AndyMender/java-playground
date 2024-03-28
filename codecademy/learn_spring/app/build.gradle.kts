@@ -17,10 +17,10 @@ repositories {
 
 dependencies {
     // Use JUnit test framework.
-    testImplementation(libs.junit)
+    testImplementation("junit:junit:4.13.2")
 
     // This dependency is used by the application.
-    implementation(libs.guava)
+    implementation("com.google.guava:guava:32.1.1-jre")
 
     // https://mvnrepository.com/artifact/org.springframework/spring-core
     implementation("org.springframework:spring-core:6.1.5")
@@ -31,7 +31,7 @@ dependencies {
 // Apply a specific Java toolchain to ease working on different environments.
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+        languageVersion = JavaLanguageVersion.of(19)
     }
 }
 
