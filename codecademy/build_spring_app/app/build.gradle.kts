@@ -16,6 +16,9 @@ repositories {
 }
 
 dependencies {
+    // Use JUnit test framework
+    testImplementation("junit:junit:4.13.2")   
+
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
     testImplementation("org.springframework.boot:spring-boot-starter-test:3.2.4")
 
