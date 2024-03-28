@@ -26,6 +26,13 @@ dependencies {
     // TODO: Do we still need this dependency?
     implementation("com.google.guava:guava:32.1.1-jre")
 
+    // NOTE: Needed explicitly for use with 'Hibernate'
+    // https://mvnrepository.com/artifact/com.h2database/h2
+    implementation("com.h2database:h2:2.2.224")
+
+    // https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc
+    implementation("org.xerial:sqlite-jdbc:3.45.2.0")
+
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter
     implementation("org.springframework.boot:spring-boot-starter:3.2.4")
 
