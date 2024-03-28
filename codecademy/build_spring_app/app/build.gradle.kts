@@ -42,8 +42,11 @@ dependencies {
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
     implementation("org.springframework.boot:spring-boot-starter-web:3.2.4")
 
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager
+    implementation("org.hibernate:hibernate-entitymanager:5.6.15.Final")
+
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
-    // NOTE: Includes the 'Hibernate' ORM for the Spring Data JPA (JPA - Java Persistence API)
+    // NOTE: Spring Data JPA (JPA - Java Persistence API) which uses 'Hibernate' ORM, but doesn't pull it as a dependency!
     implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.2.4")
 }
 
