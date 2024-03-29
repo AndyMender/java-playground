@@ -1,3 +1,4 @@
+// Normally you would have these in a separate 'entities' sub-package
 package build_spring_app;
 
 // Java Persistence API (JPA): https://docs.oracle.com/javaee/7/api/javax/persistence/package-summary.html
