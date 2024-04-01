@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+@RestController
 // Complete CRUD (Create, Read, Update, Delete) interface for manipulating plant objects
 @RequestMapping("/plants")
 public class PlantController {
