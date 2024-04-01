@@ -11,6 +11,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
+/* 'SprintBootApplication' combines the following
+    - @EnableAutoConfiguration: enable Spring Boot’s auto-configuration mechanism
+    - @ComponentScan: find all Controllers and Components which define routes
+    - @Configuration: allow to register extra beans in the context or import additional configuration classes
+*/
 @SpringBootApplication
 public class App {
     public String getClassName() {
