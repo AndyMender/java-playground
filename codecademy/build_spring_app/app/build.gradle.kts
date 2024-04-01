@@ -36,18 +36,15 @@ dependencies {
     // https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
     implementation("com.mysql:mysql-connector-j:8.3.0")
 
-    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter
-    implementation("org.springframework.boot:spring-boot-starter:3.2.4")
-
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
     implementation("org.springframework.boot:spring-boot-starter-web:3.2.4")
 
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.2.4")
+
+    // NOTE: Needed for some Java Persistence API (JPA) definitions
     // https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager
     implementation("org.hibernate:hibernate-entitymanager:5.6.15.Final")
-
-    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
-    // NOTE: Spring Data JPA (JPA - Java Persistence API) which uses 'Hibernate' ORM, but doesn't pull it as a dependency!
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.2.4")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
