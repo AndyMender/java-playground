@@ -1,4 +1,4 @@
-package baeldung;
+package baeldung.code_samples;
 
 import java.lang.Thread;
 
