@@ -8,6 +8,9 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
+	java
+	id("org.springframework.boot") version "3.2.4"
+	id("io.spring.dependency-management") version "1.1.4"
 }
 
 repositories {
@@ -16,35 +19,21 @@ repositories {
 }
 
 dependencies {
-    // Use JUnit test framework
-    testImplementation("junit:junit:4.13.2")   
+ 	// Main Spring Boot, JPA and Hibernate deps
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("org.springframework.boot:spring-boot-starter-web")
 
-    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
-    testImplementation("org.springframework.boot:spring-boot-starter-test:3.2.4")
+    // https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-community-dialects
+    // NOTE: Contains dialect add-ons for SQLite and others
+    implementation("org.hibernate.orm:hibernate-community-dialects")
 
-    // This dependency is used by the application.
-    // TODO: Do we still need this dependency?
-    implementation("com.google.guava:guava:32.1.1-jre")
+	// JDBC drivers - needed only at runtime?
+	runtimeOnly("com.mysql:mysql-connector-j")
+    runtimeOnly("org.xerial:sqlite-jdbc")
+	runtimeOnly("org.postgresql:postgresql")
 
-    // NOTE: Needed explicitly for use with 'Hibernate'
-    // https://mvnrepository.com/artifact/com.h2database/h2
-    implementation("com.h2database:h2:2.2.224")
-
-    // https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc
-    implementation("org.xerial:sqlite-jdbc:3.45.2.0")
-
-    // https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
-    implementation("com.mysql:mysql-connector-j:8.3.0")
-
-    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
-    implementation("org.springframework.boot:spring-boot-starter-web:3.2.4")
-
-    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.2.4")
-
-    // NOTE: Needed for some Java Persistence API (JPA) definitions
-    // https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager
-    implementation("org.hibernate:hibernate-entitymanager:5.6.15.Final")
+	// Test deps
+	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
